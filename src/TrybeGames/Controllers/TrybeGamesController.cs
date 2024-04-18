@@ -1,5 +1,5 @@
 using System.Globalization;
-//
+
 namespace TrybeGames;
 public class TrybeGamesController
 {
@@ -121,7 +121,14 @@ public class TrybeGamesController
     public void AddPlayer()
     {
         // implementar
-        Console.WriteLine("Ainda não é possível realizar essa funcionalidade!");
+        var id = database.Players.Count + 1;
+        var playerRead = Console.ReadLine();
+
+        Player player = new ();
+        player.Id = id;
+        player.Name = playerRead;
+
+        database.Players.Add(player);
     }
 
     // 2. Crie a funcionalidade de adicionar um novo estúdio de jogos ao banco de dados
